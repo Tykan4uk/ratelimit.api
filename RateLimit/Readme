@@ -1,0 +1,9 @@
+#docker
+docker-compose build --no-cache
+docker-compose up   
+   
+#Add-Migration
+dotnet ef --startup-project services/RateLimitApi.Service migrations add InitialMigration --project src/RateLimit
+
+#Update-Migration
+dotnet ef --startup-project services/RateLimitApi.Service database update InitialMigration --project src/RateLimit

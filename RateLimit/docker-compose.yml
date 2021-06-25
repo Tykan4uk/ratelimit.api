@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  ratelimitapi.service:
+    image: ratelimitapiservice
+    build:
+      dockerfile: Dockerfile
+    environment:
+      RateLimitApi__ConnectionString: 'server=192.168.1.120;port=5433;database=ratelimitapi;uid=postgres;password=postgres;'
+    ports:
+      - 5004:80
