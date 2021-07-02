@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{563DD16B-2AD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A814497A-7954-4BBF-9D3A-0B3EFE8109BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RateLimit", "src\RateLimit\RateLimit.csproj", "{E98BE1F8-5C00-49E9-B631-450277185B4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RateLimitApi", "src\RateLimit\RateLimitApi.csproj", "{E98BE1F8-5C00-49E9-B631-450277185B4B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RateLimitApi.Service", "services\RateLimitApi.Service\RateLimitApi.Service.csproj", "{CB811712-C198-4CAA-8DBE-CC61D5C429E2}"
 EndProject
