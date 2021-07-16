@@ -4,6 +4,7 @@ using RateLimitApi.Services.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using RateLimitApi.Models;
 
 namespace RateLimitApi.Controllers
 {
@@ -26,10 +27,11 @@ namespace RateLimitApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CheckRateLimitAsync(string name)
+        public async Task<CheckRateLimitResponse> CheckRateLimitAsync(string name)
         {
-            var result = await _rateLimitService.CheckAsync(name);
-            return result == true ? Ok() : StatusCode(409);
+            var origin = Request.Headers.TryGetValue("Origin", out var requestOrigin);
+            var result = await _rateLimitService.CheckAsync($"{name}{origin}");
+            return result;
         }
     }
 }
