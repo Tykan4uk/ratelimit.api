@@ -14,24 +14,24 @@ namespace RateLimitApi.Services
             _cacheService = cacheService;
         }
 
-        public async Task<bool> CheckAsync(string name)
+        public async Task<CheckRateLimitResponse> CheckAsync(string name)
         {
             var cache = await _cacheService.GetAsync(name);
             if (cache == null)
             {
                 await _cacheService.AddOrUpdateAsync(new RateLimitCacheEntity() { Name = name });
-                return true;
+                return new CheckRateLimitResponse { CheckRateLimit = true };
             }
 
             cache.Counter++;
 
             if (cache.Counter > 2)
             {
-                return false;
+                return new CheckRateLimitResponse { CheckRateLimit = false };
             }
 
             await _cacheService.AddOrUpdateAsync(cache);
-            return true;
+            return new CheckRateLimitResponse { CheckRateLimit = true };
         }
     }
 }

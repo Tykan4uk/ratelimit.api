@@ -5,6 +5,6 @@ namespace RateLimitApi.Services.Abstractions
 {
     public interface IRateLimitService
     {
-        Task<bool> CheckAsync(string name);
+        Task<CheckRateLimitResponse> CheckAsync(string name);
     }
 }
