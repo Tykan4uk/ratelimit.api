@@ -1,4 +1,4 @@
-namespace RateLimitApi.Models
+namespace RateLimitApi.Models.Responses
 {
     public class CheckRateLimitResponse
     {

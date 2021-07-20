@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using RateLimitApi.Data.Cache;
-using RateLimitApi.Models;
+using RateLimitApi.Models.Responses;
 using RateLimitApi.Services.Abstractions;
 
 namespace RateLimitApi.Services

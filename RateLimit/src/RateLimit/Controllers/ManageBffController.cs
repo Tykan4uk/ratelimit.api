@@ -4,7 +4,7 @@ using RateLimitApi.Services.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using RateLimitApi.Models;
+using RateLimitApi.Models.Responses;
 
 namespace RateLimitApi.Controllers
 {
