@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using RateLimitApi.Models;
+using RateLimitApi.Models.Responses;
 
 namespace RateLimitApi.Services.Abstractions
 {
