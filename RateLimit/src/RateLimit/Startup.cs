@@ -1,13 +1,9 @@
-using System.Collections.Generic;
-using System.Text.Json.Serialization;
 using RateLimitApi.Configuration;
-using RateLimitApi.Data;
 using RateLimitApi.Data.Cache;
 using RateLimitApi.Services;
 using RateLimitApi.Services.Abstractions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

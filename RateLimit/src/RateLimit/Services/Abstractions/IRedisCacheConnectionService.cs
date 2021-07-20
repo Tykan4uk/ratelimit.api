@@ -1,4 +1,3 @@
-using System;
 using StackExchange.Redis;
 
 namespace RateLimitApi.Services.Abstractions

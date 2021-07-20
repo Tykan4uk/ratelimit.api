@@ -1,5 +1,3 @@
-using System;
-
 namespace RateLimitApi.Services.Abstractions
 {
     public interface IJsonSerializer
