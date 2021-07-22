@@ -4,11 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RateLimitApi.Models.Responses;
 using RateLimitApi.Models.Requests;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RateLimitApi.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]/[action]")]
+    [Authorize(Policy = "ApiScope")]
     public class ManageController : ControllerBase
     {
         private readonly ILogger<ManageController> _logger;
