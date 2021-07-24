@@ -25,10 +25,16 @@ namespace RateLimitApi.Controllers
         }
 
         [HttpGet]
-        public async Task<CheckRateLimitResponse> CheckRateLimitAsync(CheckRateLimitRequest request)
+        public async Task<CheckRateLimitResponse> CheckRateLimitAsync([FromQuery] CheckRateLimitRequest request)
         {
             var origin = Request.Headers.TryGetValue("Origin", out var requestOrigin);
             var result = await _rateLimitService.CheckAsync($"{request.Name}{origin}");
+
+            if (!result.CheckRateLimit)
+            {
+                _logger.LogInformation("(ManageController/CheckRateLimitAsync) Too many request!");
+            }
+
             return result;
         }
     }

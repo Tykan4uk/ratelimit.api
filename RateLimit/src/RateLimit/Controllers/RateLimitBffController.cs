@@ -29,6 +29,12 @@ namespace RateLimitApi.Controllers
         {
             Request.Headers.TryGetValue("Origin", out var requestOrigin);
             var result = await _rateLimitService.CheckAsync($"{request.Name}{requestOrigin}");
+
+            if (!result.CheckRateLimit)
+            {
+                _logger.LogInformation("(RateLimitBffController/CheckRateLimitAsync) Too many request!");
+            }
+
             return result;
         }
     }
