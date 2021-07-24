@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-
+	<CodeAnalysisRuleSet>../../settings.ruleset</CodeAnalysisRuleSet>
+	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -19,6 +20,9 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+	<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+		<PrivateAssets>All</PrivateAssets>
+	</PackageReference>
   </ItemGroup>
 
   <ItemGroup>
