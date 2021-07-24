@@ -13,7 +13,7 @@ using Xunit;
 
 namespace RateLimitApi.UnitTests.Services
 {
-    public class CacheServiceTests
+    public class CacheServiceTest
     {
         private readonly ICacheService<RateLimitCacheEntity> _cacheService;
 
@@ -22,7 +22,7 @@ namespace RateLimitApi.UnitTests.Services
         private readonly Mock<IRedisCacheConnectionService> _redisCacheConnectionService;
         private readonly Mock<IJsonSerializer> _jsonSerializer;
 
-        public CacheServiceTests()
+        public CacheServiceTest()
         {
             _config = new Mock<IOptions<Config>>();
             _logger = new Mock<ILogger<CacheService<RateLimitCacheEntity>>>();
