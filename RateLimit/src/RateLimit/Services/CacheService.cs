@@ -10,7 +10,7 @@ using Microsoft.Extensions.Options;
 namespace RateLimitApi.Services
 {
     public class CacheService<TCacheEntity> : ICacheService<TCacheEntity>
-        where TCacheEntity : class, ICacheEntity
+            where TCacheEntity : class, ICacheEntity
     {
         private readonly ILogger<CacheService<TCacheEntity>> _logger;
         private readonly IRedisCacheConnectionService _redisCacheConnectionService;
@@ -48,6 +48,7 @@ namespace RateLimitApi.Services
         private async Task AddOrUpdateInternalAsync(TCacheEntity entity, IDatabase redis = null, TimeSpan? expiry = null)
         {
             redis = redis ?? GetRedisDatabase();
+            expiry = expiry ?? _config.Redis.CacheTimeout;
 
             var cacheKey = GetItemCacheKey(entity.Name);
             var serialized = _jsonSerializer.Serialize(entity);
