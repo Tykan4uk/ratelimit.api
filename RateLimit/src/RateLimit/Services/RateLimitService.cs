@@ -24,13 +24,13 @@ namespace RateLimitApi.Services
             }
 
             cache.Counter++;
+            await _cacheService.AddOrUpdateAsync(cache);
 
             if (cache.Counter > 2)
             {
                 return new CheckRateLimitResponse { CheckRateLimit = false };
             }
 
-            await _cacheService.AddOrUpdateAsync(cache);
             return new CheckRateLimitResponse { CheckRateLimit = true };
         }
     }
